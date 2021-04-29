@@ -25,8 +25,8 @@
  * The point coordinates can be assigned with random or explicitly defined values.
  * Those values subsequently express x and y axis of a mathematical coordinate plane.
  *
- * @param x first_object coordinate of the point.
- * @param y second coordinate of the point.
+ * @param x First coordinate of the point.
+ * @param y Second coordinate of the point.
  */
 class Point {
 private:
@@ -79,8 +79,6 @@ public:
      *
      * It changes the x and y value of the point to the random integer between -100 and 100
      * since I didn't know what "random" means to my beloved professor ❤.
-     *
-     * Warning! This function requires initialisation of the random number generator in main function.
      */
     void initialise_with_random_coords() {
         x = (rand() % 200 -100);
