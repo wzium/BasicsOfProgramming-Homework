@@ -49,6 +49,7 @@ public:
         this->x = x;
         this->y = y;
     }
+
     /**
      * Name of the point is pre-defined as "P".
      *
