@@ -16,8 +16,8 @@
  */
 
 #include <iostream>
-#include <windows.h>
 #include <ctime>
+#include <utility>
 
 /**
  * Represents a planar point.
@@ -25,15 +25,42 @@
  * The point coordinates can be assigned with random or explicitly defined values.
  * Those values subsequently express x and y axis of a mathematical coordinate plane.
  *
- * @param x first coordinate of the point.
+ * @param x first_object coordinate of the point.
  * @param y second coordinate of the point.
  */
 class Point {
 private:
     int x;
     int y;
+    std::string name;
+    static bool first_object;
 public:
+    /**
+     * @param name Name of the point.
+     * @param x First coordinate value of the point.
+     * @param y Second coordinate value of the point.
+     */
+    Point(std::string name, int x, int y) {
+        if (first_object){
+            srand(time(nullptr));
+            first_object = false;
+        }
+        this->name = std::move(name);
+        this->x = x;
+        this->y = y;
+    }
+    /**
+     * Name of the point is pre-defined as "P".
+     *
+     * @param x First coordinate value of the point.
+     * @param y Second coordinate value of the point.
+     */
     Point(int x, int y) {
+        if (first_object){
+            srand(time(nullptr));
+            first_object = false;
+        }
+        this->name = "P";
         this->x = x;
         this->y = y;
     }
@@ -43,17 +70,18 @@ public:
      * This method is inline because my professor told me to do so.
      */
     inline void show_coordinates() const {
-        std::cout << "Punkt ·" << x << "," << y << std::endl;
+        std::cout << name << " = (" << x << ',' << y << ")\n";
     }
 
     /**
      * Modifies the existing attributes of the point.
      *
-     * It changes the x and y value of the point to the random integer between -100 to 100
+     * It changes the x and y value of the point to the random integer between -100 and 100
      * since I didn't know what "random" means to my beloved professor ❤.
+     *
+     * Warning! This function requires initialisation of the random number generator in main function.
      */
     void initialise_with_random_coords() {
-        srand(time(NULL));
         x = (rand() % 200 -100);
         y = (rand() % 200 -100);
     }
@@ -62,52 +90,40 @@ public:
      * Shows the symmetrical point of the point object when given a point of symmetry.
      *
      * The calculations are based on the x and y attributes of the given point object that is a point of symmetry.
-     * Finally, the method outputs its calculations via the standard output.
      *
      * @param point Object of the point of symmetry.
+     * @return Object of the symmetrical point.
      */
-    void show_symmetrical(Point point) const {
+    [[nodiscard]] Point create_symmetrical(const Point& point) const {
         int symmetrical_x = 2 * point.x - x;
         int symmetrical_y = 2 * point.y - y;
-        std::cout
-        << "Punkt symetryczny względem punktu "
-        << point.x
-        << ","
-        << point.y
-        << " to punkt "
-        << symmetrical_x
-        << ","
-        << symmetrical_y
-        << std::endl;
+        return Point(name + "'", symmetrical_x, symmetrical_y);
     }
 
     /**
      * Adds points to each other.
      *
-     * The calculations are based on the x and y attributes of both given point objects.
+     * The calculations are based on the x and y attributes of a given point object.
      * Function creates new coordinates and then returns it as an object.
      *
-     * @param point Object of the first point.
-     * @param second_point Object of the second point
+     * @param point Object of the point.
      * @return Object of the final point.
      */
-    Point sum(Point point, Point second_point) { // Shouldn't it be static?
-        int sum_x = point.x + second_point.x;
-        int sum_y = point.y + second_point.y;
+    [[nodiscard]] Point sum(const Point& point) const {
+        int sum_x = this->x + point.x;
+        int sum_y = this->y + point.y;
         return Point(sum_x, sum_y);
     }
 };
-
+bool Point::first_object = true;
 int main() {
-    SetConsoleOutputCP(CP_UTF8);
-
-    Point A(5, 6);
-    Point B(2, 3);
+    Point A("A", 5, 6);
     Point point_of_symmetry(1, 1);
 
     A.show_coordinates();
-    A.show_symmetrical(point_of_symmetry);
-    Point final_point = A.sum(A, B);
+    Point symmetrical = A.create_symmetrical(point_of_symmetry);
+    symmetrical.show_coordinates();
+    Point final_point = A.sum(A);
     final_point.show_coordinates();
     A.initialise_with_random_coords();
     A.show_coordinates();
