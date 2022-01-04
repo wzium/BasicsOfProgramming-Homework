@@ -1,7 +1,7 @@
 //
 // Create a program which asks to enter the number in a loop to the moment when the 5 is entered.
 //
-package me.michal.assignments.lab03;
+package me.michal.assignments.chapter03;
 
 import java.util.ArrayList;
 import java.util.List;

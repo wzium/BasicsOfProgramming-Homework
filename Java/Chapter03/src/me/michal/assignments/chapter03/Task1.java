@@ -6,7 +6,7 @@
 // For example, entered number 45678 is split to [4, 5, 6, 7, 8]
 // and then the calculations are performed using those single numbers
 //
-package me.michal.assignments.lab03;
+package me.michal.assignments.chapter03;
 
 import java.util.*;
 

@@ -1,7 +1,7 @@
 //
 // Create the program which calculates quadratic equation using a, b and c variables determined by the user.
 //
-package me.michal.assignments.lab02;
+package me.michal.assignments.chapter02;
 
 import java.util.Scanner;
 import java.lang.Math;

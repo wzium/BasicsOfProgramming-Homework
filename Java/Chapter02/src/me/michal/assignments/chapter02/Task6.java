@@ -8,7 +8,7 @@
 // 61-72 months: 5%
 // 73-96 months: 6%
 //
-package me.michal.assignments.lab02;
+package me.michal.assignments.chapter02;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;

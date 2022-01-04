@@ -1,7 +1,7 @@
 //
 // Create a program which finds all the divisors of a given number.
 //
-package me.michal.assignments.lab03;
+package me.michal.assignments.chapter03;
 
 import java.util.Scanner;
 import java.util.Vector;

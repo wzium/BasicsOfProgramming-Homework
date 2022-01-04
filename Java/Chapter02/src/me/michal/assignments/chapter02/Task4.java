@@ -1,7 +1,7 @@
 //
 // Enter some numbers and calculate the min, max and average value and the amount of entered numbers.
 //
-package me.michal.assignments.lab02;
+package me.michal.assignments.chapter02;
 
 import org.jetbrains.annotations.Contract;
 

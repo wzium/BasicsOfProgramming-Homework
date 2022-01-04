@@ -1,7 +1,7 @@
 //
 // Create a calculator which won't allow the user to divide by 0.
 //
-package me.michal.assignments.lab02;
+package me.michal.assignments.chapter02;
 
 import java.util.Arrays;
 import java.util.InputMismatchException;

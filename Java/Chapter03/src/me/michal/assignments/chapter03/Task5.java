@@ -1,7 +1,7 @@
 //
 // Create a program which prints every value of the power of 3 smaller than the entered number.
 //
-package me.michal.assignments.lab03;
+package me.michal.assignments.chapter03;
 
 import java.util.Scanner;
 

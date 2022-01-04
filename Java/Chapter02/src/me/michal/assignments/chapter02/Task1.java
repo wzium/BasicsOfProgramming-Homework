@@ -9,7 +9,7 @@
 //  *******
 // *********
 //
-package me.michal.assignments.lab02;
+package me.michal.assignments.chapter02;
 
 import java.util.Scanner;
 

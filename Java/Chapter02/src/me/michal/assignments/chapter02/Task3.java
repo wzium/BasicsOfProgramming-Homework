@@ -1,7 +1,7 @@
 //
 // Create a program which calculates the speed of a car from mph to kph.
 //
-package me.michal.assignments.lab02;
+package me.michal.assignments.chapter02;
 
 import java.util.Scanner;
 
