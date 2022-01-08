@@ -16,7 +16,7 @@ public class Task4 {
         List<Integer> listNumbers = new ArrayList<>();
         Scanner input = new Scanner(System.in);
 
-        for(int i = 0; i < 6; i++) {
+        for (int i = 0; i < 6; i++) {
             System.out.println("Enter digit");
             listNumbers.add(input.nextInt());
         }

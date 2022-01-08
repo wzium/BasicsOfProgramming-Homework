@@ -9,7 +9,7 @@ import java.util.Vector;
 public class Task2 {
     private static void printDivisors(int number) {
         Vector<Integer> vector = new Vector<>();
-        for(int i = 1; i <= Math.sqrt(number); i++) {
+        for (int i = 1; i <= Math.sqrt(number); i++) {
             if (number % i == 0) {
                 System.out.print(i + " ");
                 if (number / i != i)

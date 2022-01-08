@@ -21,7 +21,7 @@ public class Task4 {
             else
                 list.add(number);
         }
-        for(Integer i : list)
+        for (Integer i : list)
             product *= i;
         System.out.println(product);
     }
